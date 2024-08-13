@@ -1,0 +1,8 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.page-header {
+  text-decoration: underline;
+}
