@@ -18,6 +18,10 @@ export default function Providers() {
     loadData();
   }, []);
 
+  useEffect(() => {
+    console.log("providers", providers);
+  }, [providers]);
+
   return (
     <>
       <List>
@@ -25,7 +29,8 @@ export default function Providers() {
           <>
             <ListItem key={provider.id}>
               <ListItemText primary={provider.name} />
-              <Link component={RouterLink} to="/eligibility">Check Eligibility</Link>
+              {/* <Link component={RouterLink} to="/eligibility">Check Eligibility</Link> */}
+              <Link component={RouterLink} to={provider.portal_url ? provider.portal_url : "/eligibility"}>Check Eligibility</Link>
             </ListItem>
           </>
         ))}
